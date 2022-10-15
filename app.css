@@ -1,1 +1,1 @@
-body{background-color:red;height:100vh}
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap);*{margin:0;padding:0}body{background-color:#4b5563;font-family:Roboto Slab,serif;height:100vh}.header{align-items:center;background-color:#f3f4f6;display:flex;height:7%;justify-content:center;z-index:2}.header .title{color:#4b5563;font-size:3rem;letter-spacing:.5rem}

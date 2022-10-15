@@ -1,4 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+// colors
+$main: #4b5563;
+$background: #f3f4f6;
+// general
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   height: 100vh;
-  background-color: red;
+  font-family: "Roboto Slab", serif;
+  background-color: $main;
+}
+// header
+.header {
+  height: 7%;
+  background-color: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  .title {
+    color: $main;
+    letter-spacing: 0.5rem;
+    font-size: 3rem;
+  }
 }

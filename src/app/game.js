@@ -1,3 +1,4 @@
+import { displayGameBoards } from "./dom";
 import { gameBoard } from "./gameboard";
 import { player } from "./player";
 
@@ -8,4 +9,5 @@ export function game() {
   let computerGameBoard = gameBoard();
   playerOneGameBoard.placeShips();
   computerGameBoard.placeShips();
+  displayGameBoards();
 }

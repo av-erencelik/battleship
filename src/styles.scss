@@ -104,3 +104,31 @@ $speed: 0.5s;
     transform: translateY(0) rotateX(0);
   }
 }
+// gameRender
+.game {
+  .boards {
+    display: flex;
+    gap: 2rem;
+    h1 {
+      text-align: center;
+      color: $background;
+      padding-bottom: 2rem;
+      display: none;
+      translate: 2000px;
+      transition: all 1s;
+    }
+    .board {
+      width: 500px;
+      height: 500px;
+      background-color: $background;
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(50px, 50px));
+      translate: 2000px;
+      transition: all 1s;
+      .tile {
+        border: 1px solid black;
+        height: 50px;
+      }
+    }
+  }
+}

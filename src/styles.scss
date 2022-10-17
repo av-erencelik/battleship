@@ -6,6 +6,7 @@ $background: #f3f4f6;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   height: 100vh;
@@ -24,5 +25,80 @@ body {
     color: $main;
     letter-spacing: 0.5rem;
     font-size: 3rem;
+  }
+}
+// main
+.main {
+  height: 93%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .startBtn {
+    font-size: 3rem;
+    border: none;
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+// startbtn animation
+$speed: 0.5s;
+
+.startBtn {
+  opacity: 1;
+  outline: 0;
+  background-color: #f3f4f600;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+
+  &:hover {
+    &:after {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+
+    &:before {
+      opacity: 0;
+      transform: translateY(50%) rotateX(90deg);
+    }
+  }
+
+  &:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: $main;
+    display: block;
+    transition: $speed;
+    position: absolute;
+    background: $background;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+    border-radius: 1.5rem;
+    padding: 0.5rem 0;
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: $background;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: $speed;
+    position: relative;
+    background: $main;
+    border-radius: 1.5rem;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
   }
 }

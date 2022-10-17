@@ -1,3 +1,4 @@
+import { game } from "./app/game";
 import "./styles.scss";
 
 const startButton = document.getElementById("start");
@@ -6,4 +7,5 @@ startButton.addEventListener("click", () => {
   setTimeout(function x() {
     startButton.style.display = "none";
   }, 800);
+  game();
 });

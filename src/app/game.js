@@ -2,6 +2,7 @@ import {
   displayGameBoards,
   renderGameboardShips,
   renderMissAndHit,
+  renderWinner,
 } from "./dom";
 import { gameBoard } from "./gameboard";
 import { computerCoordinate, player } from "./player";
@@ -29,6 +30,7 @@ export function playRound(coordinate) {
         computerGameBoard.hitCoordinates,
         true
       );
+      isThereAWinner();
       return;
     }
     renderMissAndHit(
@@ -36,6 +38,7 @@ export function playRound(coordinate) {
       computerGameBoard.hitCoordinates,
       true
     );
+    isThereAWinner();
     computer.isTurn = true;
     playerOne.isTurn = false;
   }
@@ -46,6 +49,7 @@ export function playRound(coordinate) {
       playerOneGameBoard.hitCoordinates,
       false
     );
+    isThereAWinner();
     while (isComHit) {
       isComHit = computerPlay();
       renderMissAndHit(
@@ -53,6 +57,7 @@ export function playRound(coordinate) {
         playerOneGameBoard.hitCoordinates,
         false
       );
+      isThereAWinner();
     }
     playerOne.isTurn = true;
     computer.isTurn = false;
@@ -67,4 +72,9 @@ function computerPlay() {
     comCoordinate = computerCoordinate();
   }
   return playerOneGameBoard.receiveAttack(comCoordinate);
+}
+function isThereAWinner() {
+  if (computerGameBoard.checkAllShipsSunk()) {
+    renderWinner(playerOne);
+  }
 }

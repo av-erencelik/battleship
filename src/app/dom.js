@@ -82,3 +82,29 @@ export function renderMissAndHit(missArray, hitArray, isPlayerTurn) {
     }
   }
 }
+export function renderWinner(winner) {
+  const playerBoard = document.getElementById("playersBoard");
+  const computerBoard = document.getElementById("computersBoard");
+  const titlePlayer = document.getElementById("title1");
+  const titleComputer = document.getElementById("title2");
+  setTimeout(() => {
+    playerBoard.style.translate = "2000px";
+    computerBoard.style.translate = "2000px";
+    titlePlayer.style.translate = "2000px";
+    titleComputer.style.translate = "2000px";
+  }, 250);
+
+  setTimeout(() => {
+    playerBoard.style.display = "none";
+    computerBoard.style.display = "none";
+    titlePlayer.style.display = "none";
+    titleComputer.style.display = "none";
+  }, 750);
+
+  const winnerTitle = document.createElement("h2");
+  winnerTitle.textContent = `Winner is ${winner.name}`;
+  document.getElementById("boards").appendChild(winnerTitle);
+  setTimeout(function () {
+    winnerTitle.style.translate = "0px";
+  }, 250);
+}

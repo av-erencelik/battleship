@@ -117,6 +117,14 @@ $speed: 0.5s;
       translate: 2000px;
       transition: all 1s;
     }
+    h2 {
+      color: $background;
+      font-size: 3rem;
+      text-align: center;
+      translate: 2000px;
+      transition: all 1s;
+      text-transform: capitalize;
+    }
     .board {
       width: 500px;
       height: 500px;

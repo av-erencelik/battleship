@@ -76,10 +76,12 @@ export function gameBoard() {
     }
     if (board.board[coordinate] === 0) {
       board.missedCoordinates.push(coordinate);
+      return false;
     } else {
       board.board[coordinate].hit();
       board.board[coordinate].isSunk();
       board.hitCoordinates.push(coordinate);
+      return true;
     }
   };
   board.checkAllShipsSunk = function () {

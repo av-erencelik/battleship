@@ -4,3 +4,6 @@ export function player(name = "computer", isTurn = false) {
   player.isTurn = isTurn;
   return player;
 }
+export function computerCoordinate() {
+  return Math.floor(Math.random() * 100);
+}

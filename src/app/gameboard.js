@@ -4,6 +4,7 @@ export function gameBoard() {
   let board = {};
   board.missedCoordinates = [];
   board.hitCoordinates = [];
+  board.shipCoordinates = [];
   board.board = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -23,28 +24,48 @@ export function gameBoard() {
   board.placeShips = function () {
     // ship with length 4
     board.board[3] = ship4;
+    board.shipCoordinates.push(3);
     board.board[4] = ship4;
+    board.shipCoordinates.push(4);
     board.board[5] = ship4;
+    board.shipCoordinates.push(5);
     board.board[6] = ship4;
+    board.shipCoordinates.push(6);
     // ships with length 3s
     board.board[26] = ship3_1;
+    board.shipCoordinates.push(26);
     board.board[27] = ship3_1;
+    board.shipCoordinates.push(27);
     board.board[28] = ship3_1;
+    board.shipCoordinates.push(28);
     board.board[60] = ship3_2;
+    board.shipCoordinates.push(60);
     board.board[61] = ship3_2;
+    board.shipCoordinates.push(61);
     board.board[62] = ship3_2;
+    board.shipCoordinates.push(62);
     // ships with length 2s
     board.board[41] = ship2_1;
+    board.shipCoordinates.push(41);
     board.board[42] = ship2_1;
+    board.shipCoordinates.push(42);
     board.board[48] = ship2_2;
+    board.shipCoordinates.push(48);
     board.board[49] = ship2_2;
+    board.shipCoordinates.push(49);
     board.board[95] = ship2_3;
+    board.shipCoordinates.push(95);
     board.board[96] = ship2_3;
+    board.shipCoordinates.push(96);
     // ships with length 1s
     board.board[77] = ship1_1;
+    board.shipCoordinates.push(77);
     board.board[33] = ship1_2;
+    board.shipCoordinates.push(33);
     board.board[55] = ship1_3;
+    board.shipCoordinates.push(55);
     board.board[11] = ship1_4;
+    board.shipCoordinates.push(11);
   };
   board.receiveAttack = function (coordinate) {
     if (

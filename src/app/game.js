@@ -1,4 +1,4 @@
-import { displayGameBoards } from "./dom";
+import { displayGameBoards, renderGameboardShips } from "./dom";
 import { gameBoard } from "./gameboard";
 import { player } from "./player";
 
@@ -10,4 +10,5 @@ export function game() {
   playerOneGameBoard.placeShips();
   computerGameBoard.placeShips();
   displayGameBoards();
+  renderGameboardShips(playerOneGameBoard.shipCoordinates);
 }

@@ -2,7 +2,7 @@
 // colors
 $main: #4b5563;
 $background: #f3f4f6;
-// general
+$ship: #00abb3; // general
 * {
   margin: 0;
   padding: 0;
@@ -126,8 +126,11 @@ $speed: 0.5s;
       translate: 2000px;
       transition: all 1s;
       .tile {
-        border: 1px solid black;
+        border: 1px solid $main;
         height: 50px;
+      }
+      .ship {
+        background-color: $ship;
       }
     }
   }

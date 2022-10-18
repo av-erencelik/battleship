@@ -17,11 +17,22 @@ export function displayGameBoards() {
   for (let i = 0; i < 100; i++) {
     let tile = document.createElement("div");
     tile.classList.add("tile");
+    tile.setAttribute("data-player-index", i);
     playerBoard.appendChild(tile);
   }
   for (let i = 0; i < 100; i++) {
     let tile = document.createElement("div");
     tile.classList.add("tile");
+    tile.setAttribute("data-computer-index", i);
     computerBoard.appendChild(tile);
+  }
+}
+
+export function renderGameboardShips(shipArray) {
+  for (let ship of shipArray) {
+    let willRenderShip = document.querySelector(
+      `[data-player-index="${ship}"]`
+    );
+    willRenderShip.classList.add("ship");
   }
 }

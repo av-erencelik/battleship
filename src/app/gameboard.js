@@ -75,7 +75,6 @@ export function gameBoard() {
   };
   board.placeShips2 = function (ship) {
     let i = Math.floor(Math.random() * 100);
-    console.log(i);
     const lastDigit2Str = String(i).slice(-1);
     const lastDigit2Num = Number(lastDigit2Str);
     if (lastDigit2Num == 9) {

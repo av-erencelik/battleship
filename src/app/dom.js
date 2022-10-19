@@ -83,32 +83,34 @@ export function renderMissAndHit(missArray, hitArray, isPlayerTurn) {
       willRenderHit.classList.remove("empty");
     }
   } else {
-    for (let miss of missArray) {
-      let willRenderMiss = document.querySelector(
-        `[data-player-index="${miss}"]`
-      );
-      if (!willRenderMiss.classList.contains("miss")) {
-        willRenderMiss.classList.add("miss");
-        willRenderMiss.style.opacity = "0.01";
-        setTimeout(() => {
-          willRenderMiss.style.opacity = "1";
-        }, 500);
-        splashSound.play();
+    setTimeout(() => {
+      for (let miss of missArray) {
+        let willRenderMiss = document.querySelector(
+          `[data-player-index="${miss}"]`
+        );
+        if (!willRenderMiss.classList.contains("miss")) {
+          willRenderMiss.classList.add("miss");
+          willRenderMiss.style.opacity = "0.01";
+          setTimeout(() => {
+            willRenderMiss.style.opacity = "1";
+          }, 500);
+          splashSound.play();
+        }
       }
-    }
-    for (let hit of hitArray) {
-      let willRenderHit = document.querySelector(
-        `[data-player-index="${hit}"]`
-      );
-      if (!willRenderHit.classList.contains("hit")) {
-        willRenderHit.style.opacity = "0.01";
-        willRenderHit.classList.add("hit");
-        setTimeout(() => {
-          willRenderHit.style.opacity = "1";
-        }, 500);
-        explosionSound.play();
+      for (let hit of hitArray) {
+        let willRenderHit = document.querySelector(
+          `[data-player-index="${hit}"]`
+        );
+        if (!willRenderHit.classList.contains("hit")) {
+          willRenderHit.style.opacity = "0.01";
+          willRenderHit.classList.add("hit");
+          setTimeout(() => {
+            willRenderHit.style.opacity = "1";
+          }, 500);
+          explosionSound.play();
+        }
       }
-    }
+    }, 1500);
   }
 }
 export function renderWinner(winner) {

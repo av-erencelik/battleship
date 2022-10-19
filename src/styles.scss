@@ -136,15 +136,20 @@ $speed: 0.5s;
       .tile {
         border: 1px solid $main;
         height: 50px;
+        transition: all 1s;
       }
       .ship {
         background-color: $ship;
       }
       .miss {
-        background-color: red;
+        background-image: url(./img/splash.png);
+        background-size: cover;
+        transition: all 1s;
       }
       .hit {
-        background-color: green;
+        background-image: url(./img/explosion.jpg);
+        background-size: cover;
+        transition: all 1s;
       }
       .empty {
         &:hover {

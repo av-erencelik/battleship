@@ -57,14 +57,26 @@ export function renderMissAndHit(missArray, hitArray, isPlayerTurn) {
       let willRenderMiss = document.querySelector(
         `[data-computer-index="${miss}"]`
       );
-      willRenderMiss.classList.add("miss");
+      if (!willRenderMiss.classList.contains("miss")) {
+        willRenderMiss.classList.add("miss");
+        willRenderMiss.style.opacity = "0.01";
+        setTimeout(() => {
+          willRenderMiss.style.opacity = "1";
+        }, 500);
+      }
       willRenderMiss.classList.remove("empty");
     }
     for (let hit of hitArray) {
       let willRenderHit = document.querySelector(
         `[data-computer-index="${hit}"]`
       );
-      willRenderHit.classList.add("hit");
+      if (!willRenderHit.classList.contains("hit")) {
+        willRenderHit.classList.add("hit");
+        willRenderHit.style.opacity = "0.01";
+        setTimeout(() => {
+          willRenderHit.style.opacity = "1";
+        }, 500);
+      }
       willRenderHit.classList.remove("empty");
     }
   } else {
@@ -72,13 +84,25 @@ export function renderMissAndHit(missArray, hitArray, isPlayerTurn) {
       let willRenderMiss = document.querySelector(
         `[data-player-index="${miss}"]`
       );
-      willRenderMiss.classList.add("miss");
+      if (!willRenderMiss.classList.contains("miss")) {
+        willRenderMiss.classList.add("miss");
+        willRenderMiss.style.opacity = "0.01";
+        setTimeout(() => {
+          willRenderMiss.style.opacity = "1";
+        }, 500);
+      }
     }
     for (let hit of hitArray) {
       let willRenderHit = document.querySelector(
         `[data-player-index="${hit}"]`
       );
-      willRenderHit.classList.add("hit");
+      if (!willRenderHit.classList.contains("hit")) {
+        willRenderHit.classList.add("hit");
+        willRenderHit.style.opacity = "0.01";
+        setTimeout(() => {
+          willRenderHit.style.opacity = "1";
+        }, 500);
+      }
     }
   }
 }

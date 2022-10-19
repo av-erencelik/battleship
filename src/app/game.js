@@ -17,6 +17,8 @@ export function game() {
   computerGameBoard = gameBoard();
   playerOneGameBoard.placeShips();
   computerGameBoard.placeShips();
+  console.log(computerGameBoard.board);
+  console.log(playerOneGameBoard.board);
   displayGameBoards();
   renderGameboardShips(playerOneGameBoard.shipCoordinates);
 }

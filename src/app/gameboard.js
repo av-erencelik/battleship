@@ -52,7 +52,6 @@ export function gameBoard() {
     if (lastDigit2Num >= 8) {
       if (board.board[i] || board.board[i - 1] || board.board[i - 2]) {
         this.placeShips3(ship);
-        return;
       } else {
         board.board[i] = ship;
         board.board[i - 1] = ship;
@@ -64,7 +63,6 @@ export function gameBoard() {
     } else {
       if (board.board[i] || board.board[i + 1] || board.board[i + 2]) {
         this.placeShips3(ship);
-        return;
       } else {
         board.board[i] = ship;
         board.board[i + 1] = ship;
@@ -77,12 +75,12 @@ export function gameBoard() {
   };
   board.placeShips2 = function (ship) {
     let i = Math.floor(Math.random() * 100);
+    console.log(i);
     const lastDigit2Str = String(i).slice(-1);
     const lastDigit2Num = Number(lastDigit2Str);
     if (lastDigit2Num == 9) {
       if (board.board[i] || board.board[i - 1]) {
         this.placeShips2(ship);
-        return;
       } else {
         board.board[i] = ship;
         board.board[i - 1] = ship;
@@ -91,8 +89,7 @@ export function gameBoard() {
       }
     } else {
       if (board.board[i] || board.board[i + 1]) {
-        this.placeShips2();
-        return;
+        this.placeShips2(ship);
       } else {
         board.board[i] = ship;
         board.board[i + 1] = ship;

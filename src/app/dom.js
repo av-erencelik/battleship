@@ -1,5 +1,6 @@
 import { playRound } from "./game";
-
+let explosionSound = document.querySelector("#boom");
+let splashSound = document.querySelector("#miss");
 export function displayGameBoards() {
   const playerBoard = document.getElementById("playersBoard");
   const computerBoard = document.getElementById("computersBoard");
@@ -63,6 +64,7 @@ export function renderMissAndHit(missArray, hitArray, isPlayerTurn) {
         setTimeout(() => {
           willRenderMiss.style.opacity = "1";
         }, 500);
+        splashSound.play();
       }
       willRenderMiss.classList.remove("empty");
     }
@@ -76,6 +78,7 @@ export function renderMissAndHit(missArray, hitArray, isPlayerTurn) {
         setTimeout(() => {
           willRenderHit.style.opacity = "1";
         }, 500);
+        explosionSound.play();
       }
       willRenderHit.classList.remove("empty");
     }
@@ -90,6 +93,7 @@ export function renderMissAndHit(missArray, hitArray, isPlayerTurn) {
         setTimeout(() => {
           willRenderMiss.style.opacity = "1";
         }, 500);
+        splashSound.play();
       }
     }
     for (let hit of hitArray) {
@@ -97,11 +101,12 @@ export function renderMissAndHit(missArray, hitArray, isPlayerTurn) {
         `[data-player-index="${hit}"]`
       );
       if (!willRenderHit.classList.contains("hit")) {
-        willRenderHit.classList.add("hit");
         willRenderHit.style.opacity = "0.01";
+        willRenderHit.classList.add("hit");
         setTimeout(() => {
           willRenderHit.style.opacity = "1";
         }, 500);
+        explosionSound.play();
       }
     }
   }

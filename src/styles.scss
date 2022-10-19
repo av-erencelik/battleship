@@ -160,3 +160,14 @@ $speed: 0.5s;
     }
   }
 }
+.sound {
+  position: absolute;
+  right: 0;
+  top: 7%;
+  background-color: $background;
+  color: $main;
+  border: 1px solid $main;
+  &:hover {
+    cursor: pointer;
+  }
+}
